@@ -17,6 +17,7 @@ namespace BootCamp.Chapter
     public static class Checks
     {
         static CultureInfo invC = CultureInfo.InvariantCulture;
+        private const int invalidNumber = -1;
         public static int PromptInt(string message)
         {
             Console.Write(message);
@@ -25,7 +26,7 @@ namespace BootCamp.Chapter
             if(!isNumber || number <= 0)
             {
                 Console.WriteLine("\"" + input + "\" is not a valid number.");
-                return -1;
+                return invalidNumber;
             }
             return number;
         }
@@ -49,7 +50,7 @@ namespace BootCamp.Chapter
             if (!isNumber || number <= 0)
             {
                 Console.WriteLine("\"" + input + "\" is not a valid number.");
-                return -1;
+                return invalidNumber;
             }
             return number;
         }
@@ -68,7 +69,7 @@ namespace BootCamp.Chapter
                     Console.Write("Weight cannot be equal or less than zero, but was " + weight + ".");
                 }
                 Console.WriteLine();
-                return -1;
+                return invalidNumber;
             }
 
             return weight / (height * height);
